@@ -1,0 +1,20 @@
+<h1>User :: <small class="text-muted">Create new</small></h1>
+<hr>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input name="name" formControlName="name" type="text" class="form-control">
+        <div *ngIf="name?.invalid && name?.touched">
+            <small *ngIf="name?.errors?.['required']" class="text-danger">Name is required</small>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input name="email" formControlName="email" type="text" class="form-control">
+        <div *ngIf="email?.invalid && email?.touched">
+            <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required</small>
+        </div>
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+</form>
