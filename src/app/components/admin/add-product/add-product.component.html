@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="mb-3">
-        <label class="form-label">Email</label>
+        <label class="form-label">Quantity</label>
         <input name="quantity" formControlName="quantity" type="text" class="form-control">
         <div *ngIf="quantity?.invalid && quantity?.touched">
             <small *ngIf="quantity?.errors?.['required']" class="text-danger">Quantity is required</small>

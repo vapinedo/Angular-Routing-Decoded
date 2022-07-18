@@ -10,6 +10,6 @@ export class AuthService {
   }
 
   hasPermissions() {
-    return of(false);
+    return of(true);
   }
 }
