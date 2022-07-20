@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate, UrlTree } from '@angular/router';
-import { SaveDataI } from '../interfaces/save-data.interface';
-import { MessageService } from './message.service';
 
-@Injectable({ providedIn: 'root' })
+import { SaveDataI } from '@core/interfaces/save-data.interface';
+import { MessageService } from '@core/services/message.service';
+
+@Injectable()
 export class FormGuard implements CanDeactivate<SaveDataI> {
   constructor(private messageSvc: MessageService) {}
 

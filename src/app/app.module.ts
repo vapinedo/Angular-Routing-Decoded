@@ -1,35 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '@app/app-routing.module';
+import { CoreModule } from '@core/core.module';
+import { SharedModule } from './modules/shared/shared.module';
 
-import { AppComponent } from './app.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { AuthComponent } from './components/auth/auth.component';
-import { HomeComponent } from './components/home/home.component';
-import { AddUserComponent } from './components/admin/add-user/add-user.component';
-import { AddProductComponent } from './components/admin/add-product/add-product.component';
-import { WelcomeComponent } from './components/admin/welcome/welcome.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ListComponent } from './components/admin/list/list.component';
+import { AppComponent } from '@app/app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    AuthComponent,
-    HomeComponent,
-    AddUserComponent,
-    AddProductComponent,
-    WelcomeComponent,
-    NavbarComponent,
-    ListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

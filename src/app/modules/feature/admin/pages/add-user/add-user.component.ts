@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SaveDataI } from 'src/app/interfaces/save-data.interface';
+import { SaveDataI } from '@core/interfaces/save-data.interface';
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss']
 })
-export class AddProductComponent implements OnInit, SaveDataI {
+export class AddUserComponent implements OnInit, SaveDataI {
 
   form: FormGroup;
 
   constructor(private fb: FormBuilder) { 
     this.form = this.fb.group({
       name: ['', Validators.required],
-      quantity: ['', Validators.required]
+      email: ['', Validators.required]
     });
   }
 
   get name() { return this.form.get('name'); }
-  get quantity() { return this.form.get('quantity'); }
+  get email() { return this.form.get('email'); }
 
   ngOnInit(): void {
   }
-  
+
   isDataSaved(): boolean {
     return !this.form.dirty;
   }

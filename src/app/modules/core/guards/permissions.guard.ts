@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CanActivateChild, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
 
-@Injectable({ providedIn: 'root' })
+import { AuthService } from '@core/services/auth.service';
+
+@Injectable()
 export class PermissionsGuard implements CanActivateChild {
   constructor(private authSvc: AuthService) {}
 
